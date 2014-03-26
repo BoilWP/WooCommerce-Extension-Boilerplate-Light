@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Extension Boilerplate Lite
  * Plugin URI: https://github.com/seb86/WooCommerce-Extension-Boilerplate-Lite
  * Description: This is a lighter version of the best WooCommerce extension boilerplate you will ever need to develop extensions for WooCommerce.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Sebs Studio
  * Author URI: http://www.sebs-studio.com
  * Author Email: sebastien@sebs-studio.com
@@ -32,7 +32,7 @@ if ( ! class_exists( 'WC_Extend_Plugin_Name' ) ) {
  * Main WooCommerce Extension Boilerplate Class
  *
  * @class WC_Extend_Plugin_Name
- * @version 1.0.0
+ * @version 1.0.1
  */
 final class WC_Extend_Plugin_Name {
 
@@ -62,7 +62,7 @@ final class WC_Extend_Plugin_Name {
 	 *
 	 * @var string
 	 */
-	public $version = "1.0.0";
+	public $version = "1.0.1";
 
 	/**
 	 * The WordPress version the plugin requires minumum.
@@ -74,9 +74,12 @@ final class WC_Extend_Plugin_Name {
 	/**
 	 * The WooCommerce version this extension requires minimum.
 	 *
+	 * Set this to the minimum version your 
+	 * extension works with WooCommerce.
+	 *
 	 * @var string
 	 */
-	public $woo_version_min = "2.1.5";
+	public $woo_version_min = "2.1.6";
 
 	/**
 	 * The single instance of the class
@@ -159,13 +162,15 @@ final class WC_Extend_Plugin_Name {
 		// Define constants
 		$this->define_constants();
 
-		// Check plugin requirements
-		$this->check_requirements();
-
 		// Include required files
 		$this->includes();
 
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( &$this, 'action_links' ) );
+
+		// Check plugin requirements
+		add_action( 'admin_init', array( &$this, 'check_requirements' ) );
+
+		// Initiate plugin
 		add_action( 'init', array( &$this, 'init_wc_extend_plugin_name' ), 0 );
 
 		// Loaded action
@@ -195,9 +200,6 @@ final class WC_Extend_Plugin_Name {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		define( 'WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE', $suffix );
-
-		$woo_version_installed = get_option('woocommerce_version');
-		define( 'WC_EXTEND_WOOVERSION', $woo_version_installed );
 	}
 
 	/**
@@ -213,12 +215,12 @@ final class WC_Extend_Plugin_Name {
 		if( current_user_can( $this->manage_plugin ) ) {
 			if(version_compare(WC_EXTEND_WOOVERSION, "2.0.20", '<=')){
 				$plugin_links = array(
-					'<a href="' . admin_url( 'admin.php?page=woocommerce_settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', 'wc_extend_plugin_name' ) . '</a>',
+					'<a href="' . admin_url( 'admin.php?page=woocommerce_settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', self::text_domain ) . '</a>',
 				);
 			}
 			else{
 				$plugin_links = array(
-					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', 'wc_extend_plugin_name' ) . '</a>',
+					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', self::text_domain ) . '</a>',
 				);
 			}
 		}
@@ -231,28 +233,29 @@ final class WC_Extend_Plugin_Name {
 	 *
 	 * @access private
 	 * @global string $wp_version
+	 * @global string $woocommerce
 	 * @return boolean
 	 */
 	private function check_requirements() {
 		global $wp_version, $woocommerce;
 
-		require_once(ABSPATH.'/wp-admin/includes/plugin.php');
+		$woo_version_installed = get_option('woocommerce_version');
+		if( empty( $woo_version_installed ) ) { $woo_version_installed = WOOCOMMERCE_VERSION; }
+		define( 'WC_EXTEND_WOOVERSION', $woo_version_installed );
 
 		if (!version_compare($wp_version, WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE, '>=')) {
 			add_action('admin_notices', array( &$this, 'display_req_notice' ) );
 			return false;
 		}
 
-		if( function_exists( 'is_plugin_active' ) ) {
-			if ( !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-				add_action('admin_notices', array( &$this, 'display_req_woo_not_active_notice' ) );
+		if ( !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+			add_action('admin_notices', array( &$this, 'display_req_woo_not_active_notice' ) );
+			return false;
+		}
+		else{
+			if( version_compare(WC_EXTEND_WOOVERSION, WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE, '<' ) ) {
+				add_action('admin_notices', array( &$this, 'display_req_woo_notice' ) );
 				return false;
-			}
-			else{
-				if( version_compare(WC_EXTEND_WOOVERSION, WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE, '<' ) ) {
-					add_action('admin_notices', array( &$this, 'display_req_woo_notice' ) );
-					return false;
-				}
 			}
 		}
 
@@ -266,7 +269,7 @@ final class WC_Extend_Plugin_Name {
 	 */
 	static function display_req_notice() {
 		echo '<div id="message" class="error"><p>';
-		echo sprintf( __('Sorry, <strong>%s</strong> requires WordPress ' . WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE . ' or higher. Please upgrade your WordPress setup', 'wc_extend_plugin_name'), WC_EXTEND_PLUGIN_NAME );
+		echo sprintf( __('Sorry, <strong>%s</strong> requires WordPress ' . WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE . ' or higher. Please upgrade your WordPress setup', self::text_domain), WC_EXTEND_PLUGIN_NAME );
 		echo '</p></div>';
 	}
 
@@ -277,7 +280,7 @@ final class WC_Extend_Plugin_Name {
 	 */
 	static function display_req_woo_not_active_notice() {
 		echo '<div id="message" class="error"><p>';
-		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce to be installed and activated first. Please <a href="%s">install WooCommerce</a> first.', 'wc_extend_plugin_name'), WC_EXTEND_PLUGIN_NAME, admin_url('plugin-install.php?tab=search&type=term&s=WooCommerce') );
+		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce to be installed and activated first. Please <a href="%s">install WooCommerce</a> first.', self::text_domain), WC_EXTEND_PLUGIN_NAME, admin_url('plugin-install.php?tab=search&type=term&s=WooCommerce') );
 		echo '</p></div>';
 	}
 
@@ -288,7 +291,7 @@ final class WC_Extend_Plugin_Name {
 	 */
 	static function display_req_woo_notice() {
 		echo '<div id="message" class="error"><p>';
-		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce ' . WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE . ' or higher. Please update WooCommerce for %s to work.', 'wc_extend_plugin_name'), WC_EXTEND_PLUGIN_NAME, WC_EXTEND_PLUGIN_NAME );
+		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce ' . WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE . ' or higher. Please update WooCommerce for %s to work.', self::text_domain), WC_EXTEND_PLUGIN_NAME, WC_EXTEND_PLUGIN_NAME );
 		echo '</p></div>';
 	}
 
@@ -390,12 +393,12 @@ final class WC_Extend_Plugin_Name {
 	 * @return void
 	 */
 	public function load_plugin_textdomain() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'wc_extend_plugin_name' );
+		$locale = apply_filters( 'plugin_locale', get_locale(), self::text_domain );
 
-		load_textdomain( 'wc_extend_plugin_name', WP_LANG_DIR . "/".self::slug."/".self::slug."-" . $locale . ".mo" );
+		load_textdomain( self::text_domain, WP_LANG_DIR . "/".self::slug."/" . $locale . ".mo" );
 
 		// Set Plugin Languages Directory
-		// Plugin translations can be filed in the wc_extend_plugin_name/languages/ directory
+		// Plugin translations can be filed in the woocommerce-extension-boilerplate-lite/languages/ directory
 		// Wordpress translations can be filed in the wp-content/languages/ directory
 		load_plugin_textdomain( self::text_domain, false, dirname( plugin_basename( __FILE__ ) ) . "/languages" );
 	}
@@ -452,8 +455,7 @@ final class WC_Extend_Plugin_Name {
 
 		if ( is_admin() ) {
 			// Main Plugin Javascript
-			//$this->load_file( self::slug . '_admin_script', '/assets/js/admin/woocommerce-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.js', true, array('jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip'), WC_Extend_Plugin_Name()->version );
-			$this->load_file( self::slug . '_admin_script', '/assets/js/admin/woocommerce-extension-plugin-name.js', true, array('jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip'), WC_Extend_Plugin_Name()->version );
+			$this->load_file( self::slug . '_admin_script', '/assets/js/admin/woocommerce-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.js', true, array('jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip'), WC_Extend_Plugin_Name()->version );
 
 			// Variables for Admin JavaScripts
 			wp_localize_script( self::slug . '_admin_script', 'wc_extend_plugin_name_admin_params', apply_filters( 'wc_extend_plugin_name_admin_params', array(
@@ -461,7 +463,7 @@ final class WC_Extend_Plugin_Name {
 				)
 			) );
 
-			// Stylesheets
+			// Admin Stylesheets
 			$this->load_file( self::slug . '_admin_style', '/assets/css/admin/wc-extension-plugin-name.css' );
 		}
 		else {
