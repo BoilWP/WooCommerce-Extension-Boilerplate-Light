@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce Extension Boilerplate Lite\n"
-"POT-Creation-Date: 2014-03-08 18:18+0100\n"
-"PO-Revision-Date: 2014-03-08 19:10+0100\n"
-"Last-Translator: Sebastien <sebastien@ocean-themes.com>\n"
+"POT-Creation-Date: 2014-03-26 18:58+0100\n"
+"PO-Revision-Date: 2014-03-26 18:58+0100\n"
+"Last-Translator: Sebastien <sebastien@sebs-studio.com>\n"
 "Language-Team: Sebs Studio <sebastien@sebs-studio.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -408,10 +408,6 @@ msgstr ""
 msgid ""
 "It is strongly recommended that you backup your database before proceeding. "
 "Are you sure you wish to run the updater now?"
-msgstr ""
-
-#: includes/admin/wc-extension-plugin-name-admin-functions.php:21
-msgid "WooCommerce Extension Boilerplate"
 msgstr ""
 
 #: woocommerce_extension_boilerplate_lite.php:216

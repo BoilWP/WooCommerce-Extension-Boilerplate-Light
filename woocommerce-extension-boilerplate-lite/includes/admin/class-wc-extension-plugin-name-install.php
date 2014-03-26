@@ -5,7 +5,7 @@
  * @author 		Your Name / Your Company Name
  * @category 	Admin
  * @package 	WooCommerce Extension Boilerplate/Classes
- * @version 	1.0.0
+ * @version 	1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -25,7 +25,7 @@ class WC_Extend_Plugin_Name_Install {
 
 		add_action( 'admin_init', array( &$this, 'install_actions' ) );
 		add_action( 'admin_init', array( &$this, 'check_version' ), 5 );
-		add_action( 'in_plugin_update_message-'.plugin_basename( dirname( dirname( __FILE__ ) ) ), array( &$this, 'in_plugin_update_message' ) );
+		add_action( 'in_plugin_update_message-'.plugin_basename( WC_EXTEND_PLUGIN_NAME_FILE ), array( &$this, 'in_plugin_update_message' ) );
 	}
 
 	/**
@@ -161,10 +161,10 @@ class WC_Extend_Plugin_Name_Install {
 			if ( preg_match( $regexp, $response['body'], $matches ) ) {
 				$notices = (array) preg_split('~[\r\n]+~', trim( $matches[1] ) );
 
-				echo '<div style="font-weight: normal; background: #cc99c2; color: #fff !important; border: 1px solid #b76ca9; padding: 9px; margin: 9px 0;">';
+				echo '<div style="font-weight: normal; background: #147ACA#cc99c2; color: #fff !important; border: 1px solid #b76ca9; padding: 9px; margin: 9px 0;">';
 
 				foreach ( $notices as $index => $line ) {
-					echo '<p style="margin: 0; font-size: 1.1em; color: #fff; text-shadow: 0 1px 1px #b574a8;">' . preg_replace( '~\[([^\]]*)\]\(([^\)]*)\)~', '<a href="${2}">${1}</a>', $line ) . '</p>';
+					echo '<p style="margin: 0; font-size: 1.1em; color: #fff; text-shadow: 0 1px 1px #B6D0DF;">' . preg_replace( '~\[([^\]]*)\]\(([^\)]*)\)~', '<a href="${2}">${1}</a>', $line ) . '</p>';
 				}
 
 				echo '</div>';

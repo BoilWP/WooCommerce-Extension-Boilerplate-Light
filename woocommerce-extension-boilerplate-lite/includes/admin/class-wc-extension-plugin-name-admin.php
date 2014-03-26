@@ -5,7 +5,7 @@
  * @author 		Your Name / Your Company Name
  * @category 	Admin
  * @package 	WooCommerce Extension Boilerplate/Admin
- * @version 	1.0.0
+ * @version 	1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -50,6 +50,9 @@ class WC_Extend_Plugin_Name_Admin {
 		switch ( $screen->id ) {
 
 			case 'dashboard' :
+				break;
+
+			case 'products':
 				break;
 
 			case 'users' :

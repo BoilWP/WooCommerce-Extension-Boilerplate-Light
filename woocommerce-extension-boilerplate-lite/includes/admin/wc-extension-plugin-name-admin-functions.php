@@ -5,7 +5,7 @@
  * @author 		Your Name / Your Company Name
  * @category 	Core
  * @package 	WooCommerce Extension Boilerplate/Admin/Functions
- * @version 	1.0.0
+ * @version 	1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function wc_extend_plugin_name_get_screen_ids() {
 	$menu_name = strtolower( str_replace ( ' ', '-', WC_EXTEND_PLUGIN_NAME_PAGE ) );
 
-	$wc_extend_plugin_name_screen_id = strtolower( str_replace ( ' ', '-', __( 'WooCommerce Extension Boilerplate', 'wc_extend_plugin_name' ) ) );
+	$wc_extend_plugin_name_screen_id = strtolower( str_replace ( ' ', '-', WC_EXTEND_PLUGIN_NAME ) );
 
 	return apply_filters( 'wc_extend_plugin_name_screen_ids', array(
 		'toplevel_page_' . $wc_extend_plugin_name_screen_id,
