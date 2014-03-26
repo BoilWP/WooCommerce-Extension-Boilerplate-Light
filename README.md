@@ -4,7 +4,7 @@
 
 This is a lite boilerplate for creating simple WooCommerce extensions. 
 
-__note__ This is not a boilerplate for WooCommerce Payment Gateways.
+> This is not a boilerplate for WooCommerce Payment Gateways.
 
 ## Documentation
 
