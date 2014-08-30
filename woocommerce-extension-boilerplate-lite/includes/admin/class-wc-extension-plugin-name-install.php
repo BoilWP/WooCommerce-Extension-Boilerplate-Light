@@ -105,7 +105,7 @@ class WC_Extend_Plugin_Name_Install {
 		 * First checks what version of WooCommerce is active,
 		 * then loads the appropriate format.
 		 */
-		if( version_compare(WC_EXTEND_WOOVERSION, "1.6.6", '<=') || version_compare(WC_EXTEND_WOOVERSION, "2.0.20", '<=') ) {
+		if( version_compare(WC_EXTEND_WOOVERSION, "2.0.20", '<=') ) {
 
 			if(version_compare(WC_EXTEND_WOOVERSION, "1.6.6", '<=')){
 				include_once( 'settings/v1.6.6/class-wc-extension-plugin-name-admin-settings.php' );
