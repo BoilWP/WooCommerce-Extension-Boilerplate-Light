@@ -1,4 +1,4 @@
-__1.0.2 - 29th August 2014__
+__1.0.2 - 30th August 2014__
 
 * .jshintrc has been added
 * composer.json file has been added
