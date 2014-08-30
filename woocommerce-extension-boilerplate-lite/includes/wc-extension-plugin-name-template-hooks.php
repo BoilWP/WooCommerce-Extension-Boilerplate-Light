@@ -1,12 +1,12 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate Template Hooks
+ * WooCommerce Extension Boilerplate Lite Template Hooks
  *
- * Action/filter hooks used for WooCommerce Extension Boilerplate functions/templates
+ * Action/filter hooks used for WooCommerce Extension Boilerplate Lite functions/templates
  *
  * @author 		Your Name / Your Company Name
- * @package 	WooCommerce Extension Boilerplate/Templates
- * @version 	1.0.0
+ * @package 	WooCommerce Extension Boilerplate Lite/Templates
+ * @version 	1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

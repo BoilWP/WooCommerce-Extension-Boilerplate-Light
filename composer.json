@@ -1,0 +1,21 @@
+{
+    "name": "seb86/WooCommerce-Extension-Boilerplate-Lite",
+    "description": "WooCommerce Extension Boilerplate Lite",
+    "keywords": ["woocommerce", "extension", "boilerplate", "lite"],
+    "homepage": "http://www.sebastiendumont.com",
+    "license": "GPL-2.0+",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "authors": [
+        {
+            "name": "Sebastien Dumont",
+            "homepage": "http://www.sebastiendumont.com"
+        },
+    ],
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    },
+    "minimum-stability": "dev"
+}

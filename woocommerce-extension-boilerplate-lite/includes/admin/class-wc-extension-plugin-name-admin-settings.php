@@ -1,11 +1,11 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate Admin Settings Class.
+ * WooCommerce Extension Boilerplate Lite Admin Settings Class.
  *
  * @author 		Your Name / Your Company Name
  * @category 	Admin
- * @package 	WooCommerce Extension Boilerplate/Admin
- * @version 	1.0.0
+ * @package 	WooCommerce Extension Boilerplate Lite/Admin
+ * @version 	1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -23,7 +23,18 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 	 * Include the settings page classes
 	 */
 	public static function get_settings_pages( ) {
-		$settings[] = include( 'settings/class-wc-extension-plugin-name-settings.php' );
+		if( version_compare(WC_EXTEND_WOOVERSION, "2.0.20", '<=') ) {
+
+			if(version_compare(WC_EXTEND_WOOVERSION, "1.6.6", '<=')){
+				$settings[] = include( 'settings/v1.6.6/class-wc-extension-plugin-name-admin-settings.php' );
+			}
+			else if(version_compare(WC_EXTEND_WOOVERSION, "2.0.20", '<=')){
+				$settings[] = include( 'settings/v2.0.20/class-wc-extension-plugin-name-admin-settings.php' );
+			}
+		}
+		else{
+			$settings[] = include( 'settings/class-wc-extension-plugin-name-settings.php' );
+		}
 
 		return $settings;
 	}

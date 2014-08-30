@@ -1,17 +1,17 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate Admin Functions
+ * WooCommerce Extension Boilerplate Lite Admin Functions
  *
  * @author 		Your Name / Your Company Name
  * @category 	Core
  * @package 	WooCommerce Extension Boilerplate/Admin/Functions
- * @version 	1.0.1
+ * @version 	1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Get all WooCommerce Extension Boilerplate screen ids
+ * Get all WooCommerce Extension Boilerplate Lite Screen IDs
  *
  * @return array
  */

@@ -1,38 +1,24 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate Uninstall
+ * WooCommerce Extension Boilerplate Lite Uninstall
  *
- * Uninstalling WooCommerce Extension Boilerplate deletes e.g. user roles, options, tables, and pages.
+ * Uninstalling WooCommerce Extension Boilerplate Lite deletes e.g. options.
  *
  * @author 		Your Name / Your Company Name
  * @category 	Core
- * @package 	WooCommerce Extension Boilerplate/Uninstaller
- * @version 	1.0.0
+ * @package 	WooCommerce Extension Boilerplate Lite/Uninstaller
+ * @version 	1.0.2
  */
 if( !defined('WP_UNINSTALL_PLUGIN') ) exit();
 
 // For Single site
 if ( !is_multisite() ) {
 
+	// Delete options
+	$wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE 'plugin_name_%';");
+
 	// Your uninstall code goes here.
-	// List each option to delete here.
-	delete_option( 'single_select_country' );
-	delete_option( 'multi_select_countries' );
-	delete_option( 'single_select_page' );
-	delete_option( 'single_select' );
-	delete_option( 'multi_select' );
-	delete_option( 'checkbox' );
-	delete_option( 'input_text' );
-	delete_option( 'input_email' );
-	delete_option( 'input_password' );
-	delete_option( 'input_number' );
-	delete_option( 'input_textarea' );
-	delete_option( 'checkgroup_option_one' );
-	delete_option( 'checkgroup_option_two' );
-	delete_option( 'checkgroup_option_three' );
-	delete_option( 'radio_options' );
-	delete_option( 'color' );
-	delete_option( 'image_width' );
+
 } 
 // For Multisite
 else {

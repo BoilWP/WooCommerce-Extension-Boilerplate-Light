@@ -1,11 +1,11 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate Admin.
+ * WooCommerce Extension Boilerplate Lite Admin.
  *
  * @author 		Your Name / Your Company Name
  * @category 	Admin
- * @package 	WooCommerce Extension Boilerplate/Admin
- * @version 	1.0.1
+ * @package 	WooCommerce Extension Boilerplate Lite/Admin
+ * @version 	1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
