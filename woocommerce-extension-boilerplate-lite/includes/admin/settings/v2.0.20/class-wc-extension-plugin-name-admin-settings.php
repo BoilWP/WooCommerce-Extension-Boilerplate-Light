@@ -48,7 +48,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Select Country', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'This gives you a list of countries. Only one can be selected.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'country_list',
+				'id' 		=> 'plugin_name_country_list',
 				'css' 		=> 'min-width:350px;',
 				'default'	=> 'GB',
 				'type' 		=> 'single_select_country',
@@ -58,7 +58,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Multi Select Countries', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'This allows you to select more than one country.' ,'wc-extend-plugin-name' ),
-				'id' 		=> 'multi_countries',
+				'id' 		=> 'plugin_name_multi_countries',
 				'css' 		=> 'min-width: 350px;',
 				'default'	=> '',
 				'type' 		=> 'multi_select_countries',
@@ -68,7 +68,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Single Page', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'You can select a page to be used for either a single shortcode or to be redirected to when called.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'single_page_id',
+				'id' 		=> 'plugin_name_single_page_id',
 				'type' 		=> 'single_select_page',
 				'default'	=> '',
 				'class'		=> 'chosen_select_nostd',
@@ -79,7 +79,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' => __( 'Single Select', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'If you not using the other select field types you can just use a standard select.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'select',
+				'id' 		=> 'plugin_name_select',
 				'default'	=> 'no',
 				'type' 		=> 'select',
 				'class'		=> 'chosen_select',
@@ -93,7 +93,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' => __( 'Multi Select', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Select more than one option. Useful for when you are using array() in your functions.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'multi_select',
+				'id' 		=> 'plugin_name_multi_select',
 				'default'	=> 'no',
 				'type' 		=> 'multiselect',
 				'class'		=> 'chosen_select',
@@ -107,7 +107,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Single Checkbox', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Can come in handy to display more options.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkbox',
+				'id' 		=> 'plugin_name_checkbox',
 				'default'	=> 'no',
 				'type' 		=> 'checkbox'
 			),
@@ -115,7 +115,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Single Input (Text) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
-				'id' 		=> 'input_text',
+				'id' 		=> 'plugin_name_input_text',
 				'default'	=> __( 'This admin setting and other imput types can be hidden via a checkbox using some javascript.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'text',
 				'css' 		=> 'min-width:300px;',
@@ -125,7 +125,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Single Input (Email) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'As you can see the default text placed in this field shows you that it is not a valid email address.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'input_email',
+				'id' 		=> 'plugin_name_input_email',
 				'default'	=> __( 'Use this field only for emails.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'email',
 				'desc_tip'	=> true,
@@ -136,7 +136,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Single Input (Password) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Use this field only for passwords.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'input_password',
+				'id' 		=> 'plugin_name_input_password',
 				'type' 		=> 'password',
 				'css' 		=> 'min-width:300px;',
 				'autoload' 	=> false
@@ -145,7 +145,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Single Input (Number) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
-				'id' 		=> 'input_number',
+				'id' 		=> 'plugin_name_input_number',
 				'default'	=> '5',
 				'type' 		=> 'number',
 				'custom_attributes' => array(
@@ -159,7 +159,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Single Textarea ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
-				'id' 		=> 'input_textarea',
+				'id' 		=> 'plugin_name_input_textarea',
 				'default'	=> __( 'You can allow the user to use this field to enter their own CSS or HTML code.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'textarea',
 				'css' 		=> 'min-width:300px;',
@@ -169,7 +169,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Checkbox Group', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Checkbox one', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkgroup_option_one',
+				'id' 		=> 'plugin_name_checkgroup_option_one',
 				'default'	=> 'yes',
 				'desc_tip'	=> __( 'You can group your checkbox options together also if you like.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'checkbox',
@@ -178,7 +178,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 
 			array(
 				'desc' 		=> __( 'Checkbox two', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkgroup_option_two',
+				'id' 		=> 'plugin_name_checkgroup_option_two',
 				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> '',
@@ -188,7 +188,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 
 			array(
 				'desc' 		=> __( 'Checkbox three', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkgroup_option_three',
+				'id' 		=> 'plugin_name_checkgroup_option_three',
 				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'end',
@@ -199,7 +199,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' 	=> __( 'Radio', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Radio, Radio! Which one do I choose?', 'wc-extend-plugin-name' ),
-				'id' 		=> 'radio_options',
+				'id' 		=> 'plugin_name_radio_options',
 				'default'	=> 'happy',
 				'type' 		=> 'radio',
 				'options' => array(
@@ -213,7 +213,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' => __( 'Colour', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'You can set a colour. Default <code>#ffffff</code>.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'color',
+				'id' 		=> 'plugin_name_color',
 				'type' 		=> 'color',
 				'css' 		=> 'width:6em;',
 				'default'	=> '#ffffff',
@@ -223,7 +223,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			array(
 				'title' => __( 'Images', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'If you need to add your own image sizes then use this field.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'images',
+				'id' 		=> 'plugin_name_images',
 				'css' 		=> '',
 				'type' 		=> 'image_width',
 				'default'	=> array(

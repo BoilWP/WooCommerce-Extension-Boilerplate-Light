@@ -80,7 +80,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' => __( 'Single Select', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'If you not using the other select field types you can just use a standard select.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'single_select',
+				'id' 		=> 'plugin_name_single_select',
 				'default'	=> 'no',
 				'type' 		=> 'select',
 				'class'		=> 'chosen_select',
@@ -94,7 +94,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' => __( 'Multi Select', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Select more than one option. Useful for when you are using array() in your functions.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'multi_select',
+				'id' 		=> 'plugin_name_multi_select',
 				'default'	=> 'no',
 				'type' 		=> 'multiselect',
 				'class'		=> 'chosen_select',
@@ -108,7 +108,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Single Checkbox', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Can come in handy to display more options.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkbox',
+				'id' 		=> 'plugin_name_checkbox',
 				'default'	=> 'no',
 				'type' 		=> 'checkbox'
 			),
@@ -116,7 +116,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Single Input (Text) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
-				'id' 		=> 'input_text',
+				'id' 		=> 'plugin_name_input_text',
 				'default'	=> __( 'This admin setting and other imput types can be hidden via a checkbox using some javascript.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'text',
 				'css' 		=> 'min-width:300px;',
@@ -126,7 +126,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Single Input (Email) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'As you can see the default text placed in this field shows you that it is not a valid email address.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'input_email',
+				'id' 		=> 'plugin_name_input_email',
 				'default'	=> __( 'Use this field only for emails.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'email',
 				'desc_tip'	=> true,
@@ -137,7 +137,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Single Input (Password) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Use this field only for passwords.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'input_password',
+				'id' 		=> 'plugin_name_input_password',
 				'type' 		=> 'password',
 				'css' 		=> 'min-width:300px;',
 				'autoload' 	=> false
@@ -146,7 +146,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Single Input (Number) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
-				'id' 		=> 'input_number',
+				'id' 		=> 'plugin_name_input_number',
 				'default'	=> '5',
 				'type' 		=> 'number',
 				'custom_attributes' => array(
@@ -160,7 +160,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Single Textarea ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
-				'id' 		=> 'input_textarea',
+				'id' 		=> 'plugin_name_input_textarea',
 				'default'	=> __( 'You can allow the user to use this field to enter their own CSS or HTML code.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'textarea',
 				'css' 		=> 'min-width:300px;',
@@ -170,7 +170,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Checkbox Group', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Checkbox one', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkgroup_option_one',
+				'id' 		=> 'plugin_name_checkgroup_option_one',
 				'default'	=> 'yes',
 				'desc_tip'	=> __( 'You can group your checkbox options together also if you like.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'checkbox',
@@ -179,7 +179,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 
 			array(
 				'desc' 		=> __( 'Checkbox two', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkgroup_option_two',
+				'id' 		=> 'plugin_name_checkgroup_option_two',
 				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> '',
@@ -189,7 +189,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 
 			array(
 				'desc' 		=> __( 'Checkbox three', 'wc-extend-plugin-name' ),
-				'id' 		=> 'checkgroup_option_three',
+				'id' 		=> 'plugin_name_checkgroup_option_three',
 				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'end',
@@ -200,7 +200,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' 	=> __( 'Radio', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'Radio, Radio! Which one do I choose?', 'wc-extend-plugin-name' ),
-				'id' 		=> 'radio_options',
+				'id' 		=> 'plugin_name_radio_options',
 				'default'	=> 'happy',
 				'type' 		=> 'radio',
 				'options' => array(
@@ -214,7 +214,7 @@ class WC_Extend_Plugin_Name_Settings extends WC_Settings_Page {
 			array(
 				'title' => __( 'Colour', 'wc-extend-plugin-name' ),
 				'desc' 		=> __( 'You can set a colour. Default <code>#ffffff</code>.', 'wc-extend-plugin-name' ),
-				'id' 		=> 'color',
+				'id' 		=> 'plugin_name_color',
 				'type' 		=> 'color',
 				'css' 		=> 'width:6em;',
 				'default'	=> '#ffffff',
