@@ -1,4 +1,4 @@
-# WooCommerce Extension Boilerplate Lite
+# WooCommerce Extension Boilerplate Lite  [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 This is a lite boilerplate for creating simple WooCommerce plugin extensions. 
 
@@ -37,6 +37,7 @@ The WooCommerce Extension Boilerplate includes the following files:
 4. Click on *Activate*
 
 > This will activate the WooCommerce Extension Boilerplate Lite and we recommend that you install it on a development site not a live site.
+
 ## Recommended Tools
 
 ### Localization Tools
