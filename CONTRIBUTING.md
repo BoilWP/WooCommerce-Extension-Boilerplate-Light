@@ -1,10 +1,10 @@
-#Contribute To WooCommerce Extension Boilerplate
+# Contribute To WooCommerce Extension Boilerplate Lite
 
 Community made patches, localisations, bug reports and contributions are always welcome and are crucial.
 
 When contributing please ensure you follow the guidelines below so that I can keep on top of things.
 
-> GitHub is for bug reports and contributions only - if you have a support question or a request for a customisation don't post here. Use [WordPress Support Forum](http://www.sebastiendumont.com/support/forum/woocommerce-extension-boilerplate/) instead.
+> GitHub is for bug reports and contributions only - if you have a support question or a request for a customisation don't post here. Use [Support Forum](http://www.sebastiendumont.com/support/forum/woocommerce-extension-boilerplate/) instead.
 
 ## Getting Started
 
