@@ -12,6 +12,8 @@ __1.0.2 - 30th August 2014__
 * Moved plugin action links up front.
 * Added forum support link on plugin action links.
 * Updated POT file.
+* Updated `uninstall.php` file
+* Improved settings pages.
 
 __1.0.1 - 26th March 2014__
 
