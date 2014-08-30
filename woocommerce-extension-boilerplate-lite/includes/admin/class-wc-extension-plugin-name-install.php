@@ -4,8 +4,8 @@
  *
  * @author 		Your Name / Your Company Name
  * @category 	Admin
- * @package 	WooCommerce Extension Boilerplate/Classes
- * @version 	1.0.1
+ * @package 	WooCommerce Extension Boilerplate Lite/Classes
+ * @version 	1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

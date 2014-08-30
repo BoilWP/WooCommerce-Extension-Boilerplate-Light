@@ -1,11 +1,11 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate First Tab Settings
+ * WooCommerce Extension Boilerplate Lite First Tab Settings
  *
  * @author 		Your Name / Your Company Name
  * @category 	Admin
  * @package 	WooCommerce Extension Boilerplate/Admin
- * @version 	1.0.0
+ * @version 	1.0.2
  */
 
 if(!defined('ABSPATH')) exit; // Exit if accessed directly
@@ -22,7 +22,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 	 */
 	public function __construct(){
 		$this->id 		= WC_EXTEND_PLUGIN_NAME_PAGE;
-		$this->label 	= apply_filters( 'wc_extend_plugin_name_settings_tab_label', __( 'Your Settings', 'wc_extend_plugin_name' ) );
+		$this->label 	= apply_filters( 'wc_extend_plugin_name_settings_tab_label', __( 'Your Settings', 'wc-extend-plugin-name' ) );
 
 		add_filter('woocommerce_settings_tabs_array', array( &$this, 'add_settings_tab' ) );
 		add_action('woocommerce_settings_tabs_' . $this->id, array( &$this, 'output' ) );
@@ -39,15 +39,15 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 		return apply_filters( 'wc_extend_' . $this->id . '_settings', array(
 
 			array(
-				'title' 	=> __( 'Settings Title', 'wc_extend_plugin_name' ), 
+				'title' 	=> __( 'Settings Title', 'wc-extend-plugin-name' ), 
 				'type' 		=> 'title', 
-				'desc' 		=> __( 'The settings title is also used to put your settings into sections making it easy for the admin to identify the area they want to alter. You can even place a description here like this one.', 'wc_extend_plugin_name' ), 
+				'desc' 		=> __( 'The settings title is also used to put your settings into sections making it easy for the admin to identify the area they want to alter. You can even place a description here like this one.', 'wc-extend-plugin-name' ), 
 				'id' 		=> $this->id . '_options'
 			),
 
 			array(
-				'title' 	=> __( 'Select Country', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'This gives you a list of countries. Only one can be selected.', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Select Country', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'This gives you a list of countries. Only one can be selected.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'country_list',
 				'css' 		=> 'min-width:350px;',
 				'default'	=> 'GB',
@@ -56,8 +56,8 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			),
 
 			array(
-				'title' 	=> __( 'Multi Select Countries', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'This allows you to select more than one country.' ,'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Multi Select Countries', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'This allows you to select more than one country.' ,'wc-extend-plugin-name' ),
 				'id' 		=> 'multi_countries',
 				'css' 		=> 'min-width: 350px;',
 				'default'	=> '',
@@ -66,8 +66,8 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			),
 
 			array(
-				'title' 	=> __( 'Single Page', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'You can select a page to be used for either a single shortcode or to be redirected to when called.', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Single Page', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'You can select a page to be used for either a single shortcode or to be redirected to when called.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'single_page_id',
 				'type' 		=> 'single_select_page',
 				'default'	=> '',
@@ -77,56 +77,56 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			),
 
 			array(
-				'title' => __( 'Single Select', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'If you not using the other select field types you can just use a standard select.', 'wc_extend_plugin_name' ),
+				'title' => __( 'Single Select', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'If you not using the other select field types you can just use a standard select.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'select',
 				'default'	=> 'no',
 				'type' 		=> 'select',
 				'class'		=> 'chosen_select',
 				'desc_tip'	=> true,
 				'options' => array(
-					'no'  => __( 'No', 'wc_extend_plugin_name' ),
-					'yes' => __( 'Yes', 'wc_extend_plugin_name' )
+					'no'  => __( 'No', 'wc-extend-plugin-name' ),
+					'yes' => __( 'Yes', 'wc-extend-plugin-name' )
 				)
 			),
 
 			array(
-				'title' => __( 'Multi Select', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'Select more than one option. Useful for when you are using array() in your functions.', 'wc_extend_plugin_name' ),
+				'title' => __( 'Multi Select', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'Select more than one option. Useful for when you are using array() in your functions.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'multi_select',
 				'default'	=> 'no',
 				'type' 		=> 'multiselect',
 				'class'		=> 'chosen_select',
 				'desc_tip'	=> true,
 				'options' => array(
-					'no'  => __( 'No', 'wc_extend_plugin_name' ),
-					'yes' => __( 'Yes', 'wc_extend_plugin_name' )
+					'no'  => __( 'No', 'wc-extend-plugin-name' ),
+					'yes' => __( 'Yes', 'wc-extend-plugin-name' )
 				)
 			),
 
 			array(
-				'title' 	=> __( 'Single Checkbox', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'Can come in handy to display more options.', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Single Checkbox', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'Can come in handy to display more options.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'checkbox',
 				'default'	=> 'no',
 				'type' 		=> 'checkbox'
 			),
 
 			array(
-				'title' 	=> __( 'Single Input (Text) ', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Single Input (Text) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
 				'id' 		=> 'input_text',
-				'default'	=> __( 'This admin setting and other imput types can be hidden via a checkbox using some javascript.', 'wc_extend_plugin_name' ),
+				'default'	=> __( 'This admin setting and other imput types can be hidden via a checkbox using some javascript.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'text',
 				'css' 		=> 'min-width:300px;',
 				'autoload' 	=> false
 			),
 
 			array(
-				'title' 	=> __( 'Single Input (Email) ', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'As you can see the default text placed in this field shows you that it is not a valid email address.', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Single Input (Email) ', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'As you can see the default text placed in this field shows you that it is not a valid email address.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'input_email',
-				'default'	=> __( 'Use this field only for emails.', 'wc_extend_plugin_name' ),
+				'default'	=> __( 'Use this field only for emails.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'email',
 				'desc_tip'	=> true,
 				'css' 		=> 'min-width:300px;',
@@ -134,8 +134,8 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			),
 
 			array(
-				'title' 	=> __( 'Single Input (Password) ', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'Use this field only for passwords.', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Single Input (Password) ', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'Use this field only for passwords.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'input_password',
 				'type' 		=> 'password',
 				'css' 		=> 'min-width:300px;',
@@ -143,7 +143,7 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			),
 
 			array(
-				'title' 	=> __( 'Single Input (Number) ', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Single Input (Number) ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
 				'id' 		=> 'input_number',
 				'default'	=> '5',
@@ -157,62 +157,62 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			),
 
 			array(
-				'title' 	=> __( 'Single Textarea ', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Single Textarea ', 'wc-extend-plugin-name' ),
 				'desc' 		=> '',
 				'id' 		=> 'input_textarea',
-				'default'	=> __( 'You can allow the user to use this field to enter their own CSS or HTML code.', 'wc_extend_plugin_name' ),
+				'default'	=> __( 'You can allow the user to use this field to enter their own CSS or HTML code.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'textarea',
 				'css' 		=> 'min-width:300px;',
 				'autoload' 	=> false
 			),
 
 			array(
-				'title' 	=> __( 'Checkbox Group', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'Checkbox one', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Checkbox Group', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'Checkbox one', 'wc-extend-plugin-name' ),
 				'id' 		=> 'checkgroup_option_one',
 				'default'	=> 'yes',
-				'desc_tip'	=> __( 'You can group your checkbox options together also if you like.', 'wc_extend_plugin_name' ),
+				'desc_tip'	=> __( 'You can group your checkbox options together also if you like.', 'wc-extend-plugin-name' ),
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'start'
 			),
 
 			array(
-				'desc' 		=> __( 'Checkbox two', 'wc_extend_plugin_name' ),
+				'desc' 		=> __( 'Checkbox two', 'wc-extend-plugin-name' ),
 				'id' 		=> 'checkgroup_option_two',
 				'default'	=> 'no',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> '',
-				'desc_tip'	=> __( 'Checkbox two', 'wc_extend_plugin_name' ),
+				'desc_tip'	=> __( 'Checkbox two', 'wc-extend-plugin-name' ),
 				'autoload' 	=> false
 			),
 
 			array(
-				'desc' 		=> __( 'Checkbox three', 'wc_extend_plugin_name' ),
+				'desc' 		=> __( 'Checkbox three', 'wc-extend-plugin-name' ),
 				'id' 		=> 'checkgroup_option_three',
 				'default'	=> 'yes',
 				'type' 		=> 'checkbox',
 				'checkboxgroup'		=> 'end',
-				'desc_tip'	=> __( 'End checkbox.', 'wc_extend_plugin_name' ),
+				'desc_tip'	=> __( 'End checkbox.', 'wc-extend-plugin-name' ),
 				'autoload' 	=> false
 			),
 
 			array(
-				'title' 	=> __( 'Radio', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'Radio, Radio! Which one do I choose?', 'wc_extend_plugin_name' ),
+				'title' 	=> __( 'Radio', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'Radio, Radio! Which one do I choose?', 'wc-extend-plugin-name' ),
 				'id' 		=> 'radio_options',
 				'default'	=> 'happy',
 				'type' 		=> 'radio',
 				'options' => array(
-					'happy' => __( 'Happy', 'wc_extend_plugin_name' ),
-					'sad'	=> __( 'Sad', 'wc_extend_plugin_name' ),
+					'happy' => __( 'Happy', 'wc-extend-plugin-name' ),
+					'sad'	=> __( 'Sad', 'wc-extend-plugin-name' ),
 				),
 				'desc_tip'	=>  true,
 				'autoload' 	=> false
 			),
 
 			array(
-				'title' => __( 'Colour', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'You can set a colour. Default <code>#ffffff</code>.', 'wc_extend_plugin_name' ),
+				'title' => __( 'Colour', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'You can set a colour. Default <code>#ffffff</code>.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'color',
 				'type' 		=> 'color',
 				'css' 		=> 'width:6em;',
@@ -221,8 +221,8 @@ class WC_Extend_Plugin_Name_Admin_Settings {
 			),
 
 			array(
-				'title' => __( 'Images', 'wc_extend_plugin_name' ),
-				'desc' 		=> __( 'If you need to add your own image sizes then use this field.', 'wc_extend_plugin_name' ),
+				'title' => __( 'Images', 'wc-extend-plugin-name' ),
+				'desc' 		=> __( 'If you need to add your own image sizes then use this field.', 'wc-extend-plugin-name' ),
 				'id' 		=> 'images',
 				'css' 		=> '',
 				'type' 		=> 'image_width',

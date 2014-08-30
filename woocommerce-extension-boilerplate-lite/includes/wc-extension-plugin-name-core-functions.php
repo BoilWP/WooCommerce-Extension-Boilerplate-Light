@@ -1,13 +1,13 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate Core Functions
+ * WooCommerce Extension Boilerplate Lite Core Functions
  *
  * General core functions available on both the front-end and admin.
  *
  * @author 		Your Name / Your Company Name
  * @category 	Core
- * @package 	WooCommerce Extension Boilerplate/Functions
- * @version 	1.0.0
+ * @package 	WooCommerce Extension Boilerplate Lite/Functions
+ * @version 	1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

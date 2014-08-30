@@ -1,13 +1,13 @@
 <?php
 /**
- * WooCommerce Extension Boilerplate Conditional Functions
+ * WooCommerce Extension Boilerplate Lite Conditional Functions
  *
  * Functions for determining the current query/page.
  *
  * @author 		Your Name / Your Company Name
  * @category 	Core
- * @package 	WooCommerce Extension Boilerplate/Functions
- * @version 	1.0.0
+ * @package 	WooCommerce Extension Boilerplate Lite/Functions
+ * @version 	1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

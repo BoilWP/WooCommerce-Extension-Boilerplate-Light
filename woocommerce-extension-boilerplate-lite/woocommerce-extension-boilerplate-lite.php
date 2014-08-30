@@ -3,22 +3,30 @@
  * Plugin Name: WooCommerce Extension Boilerplate Lite
  * Plugin URI: https://github.com/seb86/WooCommerce-Extension-Boilerplate-Lite
  * Description: This is a lighter version of the best WooCommerce extension boilerplate you will ever need to develop extensions for WooCommerce.
- * Version: 1.0.1
- * Author: Sebs Studio
- * Author URI: http://www.sebs-studio.com
- * Author Email: sebastien@sebs-studio.com
+ * Version: 1.0.2
+ * Author: Sebastien Dumont
+ * Author URI: http://www.sebastiendumont.com
+ * Author Email: mailme@sebastiendumont.com
  * Requires at least: 3.8
- * Tested up to: 3.8.1
- *
- * Text Domain: wc_extend_plugin_name
- * Domain Path: /languages/
+ * Tested up to: 4.0
+ * Text Domain: wc-extend-plugin-name
+ * Domain Path: languages
  * Network: false
+ * GitHub Plugin URI: https://github.com/seb86/WooCommerce-Extension-Boilerplate-Lite
  *
- * Copyright: (c) 2014 Sebs Studio. (sebastien@sebs-studio.com)
+ * WooCommerce Extension Boilerplate Lite is distributed under the terms of the 
+ * GNU General Public License as published by the Free Software Foundation, 
+ * either version 2 of the License, or any later version.
  *
- * License: GNU General Public License v3.0
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * WooCommerce Extension Boilerplate Lite is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
+ * You should have received a copy of the GNU General Public License
+ * along with WooCommerce Extension Boilerplate Lite. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @TODO Replace 'WC_Extens_Plugin_Name' with the name of your plugin class.
  * @package WC_Extend_Plugin_Name
  * @author Your Name / Your Company Name
  * @category Core
@@ -31,55 +39,11 @@ if ( ! class_exists( 'WC_Extend_Plugin_Name' ) ) {
 /**
  * Main WooCommerce Extension Boilerplate Class
  *
+ * @TODO Replace 'WC_Extend_Plugin_Name' with the name of your plugin class.
  * @class WC_Extend_Plugin_Name
- * @version 1.0.1
+ * @version 1.0.2
  */
 final class WC_Extend_Plugin_Name {
-
-	/**
-	 * Constants
-	 */
-
-	// Slug
-	const slug = 'wc_extend_plugin_name';
-
-	// Text Domain
-	const text_domain = 'wc_extend_plugin_name';
-
-	/**
-	 * Global Variables
-	 */
-
-	/**
-	 * The Plug-in name.
-	 *
-	 * @var string
-	 */
-	public $name = "WooCommerce Extension Boilerplate Lite";
-
-	/**
-	 * The Plug-in version.
-	 *
-	 * @var string
-	 */
-	public $version = "1.0.1";
-
-	/**
-	 * The WordPress version the plugin requires minumum.
-	 *
-	 * @var string
-	 */
-	public $wp_version_min = "3.7.1";
-
-	/**
-	 * The WooCommerce version this extension requires minimum.
-	 *
-	 * Set this to the minimum version your 
-	 * extension works with WooCommerce.
-	 *
-	 * @var string
-	 */
-	public $woo_version_min = "2.1.6";
 
 	/**
 	 * The single instance of the class
@@ -89,50 +53,103 @@ final class WC_Extend_Plugin_Name {
 	protected static $_instance = null;
 
 	/**
-	 * The Plug-in URL.
+	 * Global Variables
+	 * TODO: change variables to what you want them to be.
+	 */
+
+	/**
+	 * Slug
 	 *
+	 * @TODO Rename the plugin slug to your own.
+	 * @var string
+	 */
+	public $plugin_slug = 'wc_extend_plugin_name';
+
+	/**
+	 * Text Domain
+	 *
+	 * @TODO Rename the text domain to match the name of your plugin.
+	 * @var string
+	 */
+	public $text_domain = 'wc-extend-plugin-name';
+
+	/**
+	 * The Plugin Name.
+	 *
+	 * @TODO Rename the plugin name to your own.
+	 * @var string
+	 */
+	public $name = "WooCommerce Extension Boilerplate Lite";
+
+	/**
+	 * The Plugin Version.
+	 *
+	 * @var string
+	 */
+	public $version = "1.0.2";
+
+	/**
+	 * The WordPress version the plugin requires minumum.
+	 *
+	 * @var string
+	 */
+	public $wp_version_min = "3.8";
+
+	/**
+	 * The WooCommerce version this extension requires minimum.
+	 *
+	 * Set this to the minimum version your 
+	 * extension works with WooCommerce.
+	 *
+	 * @var string
+	 */
+	public $woo_version_min = "2.1.12";
+
+	/**
+	 * The Plugin URL.
+	 *
+	 * @TODO Replace the url
 	 * @var string
 	 */
 	public $web_url = "http://www.sebs-studio.com/boilerplates/woocommerce-extension-lite/";
 
 	/**
-	 * The Plug-in documentation URL.
+	 * The Plugin documentation URL.
 	 *
+	 * @TODO Replace the url
 	 * @var string
 	 */
 	public $doc_url = "https://github.com/seb86/WooCommerce-Extension-Boilerplate-Lite/wiki/";
 
 	/**
-	 * The WordPress Plug-in URL.
+	 * The WordPress.org Plugin URL.
 	 *
+	 * @TODO Replace the url ex. 'http://wordpress.org/plugins/your-plugin-name'
 	 * @var string
 	 */
 	public $wp_plugin_url = "http://wordpress.org/plugins/woocommerce-extension-boilerplate-lite";
 
 	/**
-	 * The WordPress Plug-in Support URL.
+	 * The WordPress.org Plugin Support URL.
 	 *
+	 * @TODO Replace the url ex. 'http://wordpress.org/support/plugin/your-plugin-name'
 	 * @var string
 	 */
 	public $wp_plugin_support_url = "http://wordpress.org/support/plugin/woocommerce-extension-boilerplate-lite";
 
 	/**
-	 * GitHub Username
-	 *
-	 * @var string
-	 */
-	public $github_username = "seb86";
-
-	/**
 	 * GitHub Repo URL
 	 *
+	 * @TODO Replace the url with your own repository
 	 * @var string
 	 */
-	public $github_repo_url = "https://github.com/username/WooCommerce-Extension-Boilerplate-Lite/";
+	public $github_repo_url = "https://github.com/seb86/WooCommerce-Extension-Boilerplate-Lite/";
 
 	/**
-	 * The Plug-in manage plugin name.
+	 * Manage Plugin.
 	 *
+	 * @TODO Replace the 'manage_plugin_name' with the 
+	 * level control the user must have to control the plugin.
 	 * @var string
 	 */
 	public $manage_plugin = "manage_woocommerce";
@@ -148,9 +165,36 @@ final class WC_Extend_Plugin_Name {
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
+			self::$_instance = new WC_Extend_Plugin_Name;
 		}
 		return self::$_instance;
+	}
+
+	/**
+	 * Throw error on object clone
+	 *
+	 * The whole idea of the singleton design pattern is that there is a single
+	 * object therefore, we don't want the object to be cloned.
+	 *
+	 * @since 1.0.0
+	 * @access protected
+	 * @return void
+	 */
+	public function __clone() {
+		// Cloning instances of the class is forbidden
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', $this->text_domain ), $this->version );
+	}
+
+	/**
+	 * Disable unserializing of the class
+	 *
+	 * @since 1.0.0
+	 * @access protected
+	 * @return void
+	 */
+	public function __wakeup() {
+		// Unserializing instances of the class is forbidden
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', $this->text_domain ), $this->version );
 	}
 
 	/**
@@ -162,13 +206,14 @@ final class WC_Extend_Plugin_Name {
 		// Define constants
 		$this->define_constants();
 
+		// Check plugin requirements
+		$this->check_requirements();
+
 		// Include required files
 		$this->includes();
 
+		// Hooks
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( &$this, 'action_links' ) );
-
-		// Check plugin requirements
-		add_action( 'admin_init', array( &$this, 'check_requirements' ) );
 
 		// Initiate plugin
 		add_action( 'init', array( &$this, 'init_wc_extend_plugin_name' ), 0 );
@@ -178,36 +223,10 @@ final class WC_Extend_Plugin_Name {
 	}
 
 	/**
-	 * Define Constants
-	 *
-	 * @access private
-	 */
-	private function define_constants() {
-		// TODO: change 'WC_EXTEND_PLUGIN_NAME' to the name of the plugin.
-		define( 'WC_EXTEND_PLUGIN_NAME', $this->name );
-		define( 'WC_EXTEND_PLUGIN_NAME_FILE', __FILE__ );
-		define( 'WC_EXTEND_PLUGIN_NAME_VERSION', $this->version );
-		define( 'WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE', $this->wp_version_min );
-		define( 'WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE', $this->woo_version_min );
-		define( 'WC_EXTEND_PLUGIN_NAME_PAGE', str_replace('_', '-', self::slug) );
-
-		define( 'WC_EXTEND_TEMPLATE_PATH', $this->template_path() );
-
-		define( 'WC_EXTEND_PLUGIN_NAME_README_FILE', 'http://plugins.svn.wordpress.org/woocommerce-extension-plugin-name/trunk/readme.txt' );
-
-		define( 'GITHUB_USERNAME', $this->github_username );
-		define( 'GITHUB_REPO_URL' , str_replace( 'username', GITHUB_USERNAME, $this->github_repo_url ) );
-
-		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		define( 'WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE', $suffix );
-	}
-
-	/**
 	 * Plugin action links.
 	 *
 	 * @access public
 	 * @param mixed $links
-	 * @param string $file plugin file path and name being processed
 	 * @return void
 	 */
 	public function action_links( $links ) {
@@ -215,17 +234,47 @@ final class WC_Extend_Plugin_Name {
 		if( current_user_can( $this->manage_plugin ) ) {
 			if(version_compare(WC_EXTEND_WOOVERSION, "2.0.20", '<=')){
 				$plugin_links = array(
-					'<a href="' . admin_url( 'admin.php?page=woocommerce_settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', self::text_domain ) . '</a>',
+					'<a href="' . admin_url( 'admin.php?page=woocommerce_settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', $this->text_domain ) . '</a>',
 				);
 			}
 			else{
 				$plugin_links = array(
-					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', self::text_domain ) . '</a>',
+					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=' . WC_EXTEND_PLUGIN_NAME_PAGE ) . '">' . __( 'Settings', $this->text_domain ) . '</a>',
 				);
 			}
 		}
 
-		return array_merge( $links, $plugin_links );
+		$support = array(
+					'<a href="http://www.sebastiendumont.com/support/forum/woocommerce-extension-boilerplate/" target="_blnak">' . __( 'Support', $this->text_domain ) . '</a>',
+		);
+		$plugin_links = array_merge( $plugin_links, $support );
+
+		return array_merge( $plugin_links, $links );
+	}
+
+	/**
+	 * Define Constants
+	 *
+	 * @access private
+	 */
+	private function define_constants() {
+		// TODO: change 'WC_EXTEND_PLUGIN_NAME' to the name of the plugin.
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME' ) ) define( 'WC_EXTEND_PLUGIN_NAME', $this->name );
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME_FILE' ) ) define( 'WC_EXTEND_PLUGIN_NAME_FILE', __FILE__ );
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME_VERSION' ) ) define( 'WC_EXTEND_PLUGIN_NAME_VERSION', $this->version );
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE' ) ) define( 'WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE', $this->wp_version_min );
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE' ) ) define( 'WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE', $this->woo_version_min );
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME_PAGE' ) ) define( 'WC_EXTEND_PLUGIN_NAME_PAGE', str_replace('_', '-', $this->plugin_slug) );
+
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME_TEMPLATE_PATH' ) ) define( 'WC_EXTEND_PLUGIN_NAME_TEMPLATE_PATH', $this->template_path() );
+
+		// TODO: change 'woocommerce-extension-plugin-name' with the plugin slug of your plugin on "WordPress.org"
+		if ( ! defined( 'WC_EXTEND_PLUGIN_NAME_README_FILE' ) ) define( 'WC_EXTEND_PLUGIN_NAME_README_FILE', 'http://plugins.svn.wordpress.org/woocommerce-extension-plugin-name/trunk/readme.txt' );
+
+		if ( ! defined( 'GITHUB_REPO_URL' ) ) define( 'GITHUB_REPO_URL', $this->github_repo_url );
+
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+		define( 'WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE', $suffix );
 	}
 
 	/**
@@ -248,7 +297,7 @@ final class WC_Extend_Plugin_Name {
 			return false;
 		}
 
-		if ( !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+		if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 			add_action('admin_notices', array( &$this, 'display_req_woo_not_active_notice' ) );
 			return false;
 		}
@@ -269,7 +318,7 @@ final class WC_Extend_Plugin_Name {
 	 */
 	static function display_req_notice() {
 		echo '<div id="message" class="error"><p>';
-		echo sprintf( __('Sorry, <strong>%s</strong> requires WordPress ' . WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE . ' or higher. Please upgrade your WordPress setup', self::text_domain), WC_EXTEND_PLUGIN_NAME );
+		echo sprintf( __('Sorry, <strong>%s</strong> requires WordPress ' . WC_EXTEND_PLUGIN_NAME_WP_VERSION_REQUIRE . ' or higher. Please upgrade your WordPress setup', $this->text_domain), WC_EXTEND_PLUGIN_NAME );
 		echo '</p></div>';
 	}
 
@@ -280,7 +329,7 @@ final class WC_Extend_Plugin_Name {
 	 */
 	static function display_req_woo_not_active_notice() {
 		echo '<div id="message" class="error"><p>';
-		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce to be installed and activated first. Please <a href="%s">install WooCommerce</a> first.', self::text_domain), WC_EXTEND_PLUGIN_NAME, admin_url('plugin-install.php?tab=search&type=term&s=WooCommerce') );
+		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce to be installed and activated first. Please <a href="%s">install WooCommerce</a> first.', $this->text_domain), WC_EXTEND_PLUGIN_NAME, admin_url('plugin-install.php?tab=search&type=term&s=WooCommerce') );
 		echo '</p></div>';
 	}
 
@@ -291,7 +340,7 @@ final class WC_Extend_Plugin_Name {
 	 */
 	static function display_req_woo_notice() {
 		echo '<div id="message" class="error"><p>';
-		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce ' . WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE . ' or higher. Please update WooCommerce for %s to work.', self::text_domain), WC_EXTEND_PLUGIN_NAME, WC_EXTEND_PLUGIN_NAME );
+		echo sprintf( __('Sorry, <strong>%s</strong> requires WooCommerce ' . WC_EXTEND_PLUGIN_NAME_WOO_VERSION_REQUIRE . ' or higher. Please update WooCommerce for %s to work.', $this->text_domain), WC_EXTEND_PLUGIN_NAME, WC_EXTEND_PLUGIN_NAME );
 		echo '</p></div>';
 	}
 
@@ -393,14 +442,30 @@ final class WC_Extend_Plugin_Name {
 	 * @return void
 	 */
 	public function load_plugin_textdomain() {
-		$locale = apply_filters( 'plugin_locale', get_locale(), self::text_domain );
+		// Set filter for plugin's languages directory
+		$lang_dir = dirname( plugin_basename( WC_EXTEND_PLUGIN_NAME_FILE ) ) . '/languages/';
+		$lang_dir = apply_filters( 'wc_extend_plugin_name_languages_directory', $lang_dir );
 
-		load_textdomain( self::text_domain, WP_LANG_DIR . "/".self::slug."/" . $locale . ".mo" );
+		// Traditional WordPress plugin locale filter
+		$locale = apply_filters( 'plugin_locale',  get_locale(), $this->text_domain );
+		$mofile = sprintf( '%1$s-%2$s.mo', $this->text_domain, $locale );
 
-		// Set Plugin Languages Directory
-		// Plugin translations can be filed in the woocommerce-extension-boilerplate-lite/languages/ directory
-		// Wordpress translations can be filed in the wp-content/languages/ directory
-		load_plugin_textdomain( self::text_domain, false, dirname( plugin_basename( __FILE__ ) ) . "/languages" );
+		// Setup paths to current locale file
+		$mofile_local  = $lang_dir . $mofile;
+		$mofile_global = WP_LANG_DIR . '/' . $this->text_domain . '/' . $mofile;
+
+		if ( file_exists( $mofile_global ) ) {
+			// Look in global /wp-content/languages/wc-extend-plugin-name/ folder
+			load_textdomain( $this->text_domain, $mofile_global );
+		}
+		elseif ( file_exists( $mofile_local ) ) {
+			// Look in local /wp-content/plugins/wc-extend-plugin-name/languages/ folder
+			load_textdomain( $this->text_domain, $mofile_local );
+		}
+		else {
+			// Load the default language files
+			load_plugin_textdomain( $this->text_domain, false, $lang_dir );
+		}
 	}
 
 	/** Helper functions ******************************************************/
@@ -441,7 +506,7 @@ final class WC_Extend_Plugin_Name {
 	 * @return string
 	 */
 	public function template_path() {
-		return apply_filters( 'WC_EXTEND_TEMPLATE_PATH', $this->plugin_path() . '/templates/' );
+		return apply_filters( 'WC_EXTEND_PLUGIN_NAME_TEMPLATE_PATH', $this->plugin_path() . '/templates/' );
 	}
 
 	/**
@@ -455,25 +520,25 @@ final class WC_Extend_Plugin_Name {
 
 		if ( is_admin() ) {
 			// Main Plugin Javascript
-			$this->load_file( self::slug . '_admin_script', '/assets/js/admin/woocommerce-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.js', true, array('jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip'), WC_Extend_Plugin_Name()->version );
+			$this->load_file( $this->plugin_slug . '_admin_script', '/assets/js/admin/woocommerce-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.js', true, array('jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip'), WC_Extend_Plugin_Name()->version );
 
 			// Variables for Admin JavaScripts
-			wp_localize_script( self::slug . '_admin_script', 'wc_extend_plugin_name_admin_params', apply_filters( 'wc_extend_plugin_name_admin_params', array(
+			wp_localize_script( $this->plugin_slug . '_admin_script', 'wc_extend_plugin_name_admin_params', apply_filters( 'wc_extend_plugin_name_admin_params', array(
 				'plugin_url' => $this->plugin_url(),
 				)
 			) );
 
 			// Admin Stylesheets
-			$this->load_file( self::slug . '_admin_style', '/assets/css/admin/wc-extension-plugin-name.css' );
+			$this->load_file( $this->plugin_slug . '_admin_style', '/assets/css/admin/wc-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.css' );
 		}
 		else {
-			$this->load_file( self::slug . '-script', '/assets/js/frontend/wc-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.js', true );
+			$this->load_file( $this->plugin_slug . '-script', '/assets/js/frontend/wc-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.js', true );
 
 			// WooCommerce Extension Boilerplate Stylesheet
-			$this->load_file( self::slug . '-style', '/assets/css/wc-extension-plugin-name.css' );
+			$this->load_file( $this->plugin_slug . '-style', '/assets/css/wc-extension-plugin-name' . WC_EXTEND_PLUGIN_NAME_SCRIPT_MODE . '.css' );
 
 			// Variables for JS scripts
-			wp_localize_script( self::slug . '-script', 'wc_extend_plugin_name_params', apply_filters( 'wc_extend_plugin_name_params', array(
+			wp_localize_script( $this->plugin_slug . '-script', 'wc_extend_plugin_name_params', apply_filters( 'wc_extend_plugin_name_params', array(
 				'plugin_url' => $this->plugin_url(),
 				)
 			) );
