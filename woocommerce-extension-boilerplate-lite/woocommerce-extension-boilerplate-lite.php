@@ -361,7 +361,7 @@ final class WC_Extend_Plugin_Name {
 			$this->ajax_includes();
 		}
 
-		if ( ! is_admin() || !defined('DOING_AJAX') ) {
+		if ( ! is_admin() || defined('DOING_AJAX') ) {
 			$this->frontend_includes();
 		}
 
