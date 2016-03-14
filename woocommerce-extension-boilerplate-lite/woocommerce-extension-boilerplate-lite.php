@@ -379,7 +379,8 @@ final class WC_Extend_Plugin_Name {
 		if( version_compare(WC_EXTEND_WOOVERSION, '1.6.6', '>' ) ) {
 			// Include the settings page to add our own settings.
 			include_once( $this->wc_plugin_path() . 'includes/admin/settings/class-wc-settings-page.php' );
-			$this->wc_settings_page = new WC_Settings_Page(); // Call the settings page for WooCommerce.
+			include_once( 'includes/admin/class-wc-extension-plugin-name-admin-settings.php' );
+			$this->wc_settings_page = new WC_Extend_Plugin_Name_Admin_Settings(); // Call the settings page for WooCommerce.
 		}
 
 		include_once( 'includes/wc-extension-plugin-name-hooks.php' ); // Hooks used in the admin
